@@ -30,14 +30,6 @@ $(document).ready(function() {
         $(currentAttrValue).show().siblings().hide();
  
         $(this).parent('li').addClass('active').siblings().removeClass('active');
-
-        var myButtons = document.getElementsByClassName('textButton');
-
-        for(var j=0; j<myButtons.length; j++){
-        	$(myButtons[j]).css("border-width", "3px");
-        }
-
-        $(this).css("border-width", "5px");
  
         e.preventDefault();
     });

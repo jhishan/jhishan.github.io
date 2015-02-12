@@ -58,7 +58,7 @@ ul{
 	padding: 0px;
 }
 
-.tab-links p {
+.textButton {
 	padding:10px;
     border-radius:1px;
     font-size:16px;
@@ -68,6 +68,10 @@ ul{
 	border-color:#34495e;
     transition:all linear 0.15s;
 	text-decoration:none;
+}
+
+.active .textButton {
+	border-width: 5px;
 }
  
 .tab-links p:hover {

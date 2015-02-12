@@ -7,16 +7,15 @@ $(document).ready(function() {
         var elemHeight = $(elem).height();
         return ((elemTop-docViewTop) < (elemHeight/1.8));
     }
-	
+
 	var profilePicture = $('.profilePicture');
 	var myImages = document.getElementsByClassName('img');
 	var title = $('.pageTitle');
 	var mainWidth = $('#page-content-wrapper').width();
-		
-		
+
 	$(window).scroll(function(){
 		for (var i = 0; i<myImages.length; i++){	
-			if(isScrolledIntoView(my_images[i])){
+			if(isScrolledIntoView(myImages[i])){
 				title.html(myImages[i].getAttribute('alt'));	
 			}				
 		};

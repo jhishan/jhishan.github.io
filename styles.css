@@ -19,6 +19,7 @@
 }
 
 img, .img {
+	border-radius: 2px;
 	max-width: 78%%;
 	max-height: 546px;
   	display: block;

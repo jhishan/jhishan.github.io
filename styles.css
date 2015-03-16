@@ -1,10 +1,71 @@
 html,body{
     width: 100%;
-    height: 100%;
     margin: 0px;
     padding: 0px;
-    overflow-x: hidden; 
 }
+
+#header{
+    overflow: auto;
+    height: 400px;;
+    width: 100%;
+    background: url(img/header.JPG) center center;
+    background-size: cover;
+}
+
+h1{
+    text-align: center;
+    font-family: Open Sans;
+    font-size: 50px;
+    font-weight: 700;
+    color: black;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 10px;
+    padding-top: 120px;
+
+
+}
+
+span{
+    display: inline-block;
+    padding: .2em .4em;
+    border: black solid 8px;
+    border-radius: 1px;
+    background: rgba(255,255,255,0.3);
+}
+
+#kicker{
+    font-family: Open Sans;
+    font-weight: 700;
+    text-transform: uppercase;
+    width: 250px;
+    padding: 3px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1;
+    background: rgba(255,255,255,0.2);
+}
+
+.paragraphs{
+    letter-spacing: .01rem;
+    line-height: 1.6;
+    font-family: Open Sans;
+    margin-top: 150px;
+    margin-bottom: 150px;
+    max-width:80%;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+img{
+    width: 100%;
+	max-height: 800px;
+}
+img.resize{
+    height: auto;
+}
+/*
+
 .pageTitle{
 	color: white;
 	position: fixed;
@@ -20,35 +81,10 @@ html,body{
 	padding-left: 10px;
 	padding-right: 10px;
 	background-color: #95A5A6;
+    z-index: 999;
 }
 
-.img {
-	border-radius: 2px;
-	max-width: 78%%;
-	max-height: 546px;
-  	display: block;
-	margin-left: auto;
-  	margin-right: auto;
-}
 
-img.resize{
-    height: auto;
-} 
-
-#profilePicture{
-	border-radius: 50%;
-	height: 125px;
-	margin-top: 10px;
-	margin-bottom: 25px;
-	border-style: solid;
-	border-width: 1px;
-	border-color: lightgray;
-}
-
-#headerImage{
-	width: 100%;
-
-}
 
 #tab1{
 	border-width: 5px;
@@ -56,8 +92,8 @@ img.resize{
 
 .tabs {
 	margin-top: 45px;
-	text-align: center;	
-} 
+	text-align: center;
+}
 
 .tab-links li {
 	list-style:none;
@@ -83,17 +119,17 @@ ul{
 .active .textButton {
 	border-width: 5px;
 }
- 
+
 .tab-links p:hover {
     border-width: 5px;
 	transition:all linear 0.2s;
     text-decoration:none;
 }
- 
+
 li.active p, li.active p:hover {
     color:#34495e;
 }
- 
+
 .tab-content {
     margin-left: auto;
 	margin-right: auto;
@@ -102,17 +138,17 @@ li.active p, li.active p:hover {
     border-radius:3px;
 	border-style: solid;
 	border-width: 1px;
-   	border-color: lightgray; 
+   	border-color: lightgray;
    	line-height: 22px;
    	font-family: serif;
    	color: #333;
 }
- 
+
 .tab {
     display:none;
 
 }
- 
+
 .tab.active {
     display:block;
 }
@@ -129,6 +165,3 @@ li.active p, li.active p:hover {
 margin-left: 30px;
 font-size: 20px;
 }
-
-
-

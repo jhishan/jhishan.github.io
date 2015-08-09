@@ -12,6 +12,37 @@ html,body{
     background-size: cover;
 }
 
+#pageTitle{
+	color: white;
+	position: fixed;
+	top: 0;
+	right: 0;
+	text-align: right;
+	font-size: 18px;
+	font-family: sans-serif;
+	font-weight: lighter;
+	letter-spacing: 1px;
+	padding-top: 4px;
+	padding-bottom: 2px;
+	padding-left: 10px;
+	padding-right: 10px;
+	background-color: #95A5A6;
+  z-index: 999;
+}
+
+#kicker{
+    text-align: center;
+    font-family: Open Sans;
+    font-weight: 700;
+    text-transform: uppercase;
+    width: 260px;
+    padding: 3px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1;
+    background: rgba(255,255,255,0.2);
+}
+
 h1{
     text-align: center;
     font-family: Open Sans;
@@ -32,19 +63,6 @@ span{
     background: rgba(255,255,255,0.3);
 }
 
-#kicker{
-    text-align: center;
-    font-family: Open Sans;
-    font-weight: 700;
-    text-transform: uppercase;
-    width: 260px;
-    padding: 3px;
-    margin-left: auto;
-    margin-right: auto;
-    line-height: 1;
-    background: rgba(255,255,255,0.2);
-}
-
 .paragraphs{
     letter-spacing: .01rem;
     line-height: 1.6;
@@ -60,38 +78,16 @@ span{
     text-align: left;
 }
 
-img{
+.bigPhoto{
     display: block;
     width: 100%;
     max-width: 1300px;
-	max-height: 800px;
+	  max-height: 800px;
     margin-left: auto;
     margin-right: auto;
 }
-img.resize{
+.bigPhoto.resize{
     height: auto;
-}
-
-#canvas{
-    width: 100%;
-}
-
-.pageTitle{
-	color: white;
-	position: fixed;
-	top: 0;
-	right: 0;
-	text-align: right;
-	font-size: 18px;
-	font-family: sans-serif;
-	font-weight: lighter;
-	letter-spacing: 1px;
-	padding-top: 4px;
-	padding-bottom: 2px;
-	padding-left: 10px;
-	padding-right: 10px;
-	background-color: #95A5A6;
-    z-index: 999;
 }
 
 a:link {

@@ -8,7 +8,6 @@ $(document).ready(function() {
         return ((elemTop-docViewTop) < (elemHeight/1.8));
     }
 
-	var profilePicture = $('.profilePicture');
 	var myImages = document.getElementsByClassName('img');
 	var title = $('.pageTitle');
 	var mainWidth = $('#page-content-wrapper').width();
@@ -23,14 +22,4 @@ $(document).ready(function() {
 			title.html('Jhishan');
 		};
 	});
-
-	$('.tab-links p').on('click', function(e){
-    	var currentAttrValue = jQuery(this).attr('href');
-
-        $(currentAttrValue).show().siblings().hide();
-
-        $(this).parent('li').addClass('active').siblings().removeClass('active');
-
-        e.preventDefault();
-    });
 });

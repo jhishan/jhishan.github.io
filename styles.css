@@ -37,12 +37,24 @@ span{
     font-family: Open Sans;
     font-weight: 700;
     text-transform: uppercase;
-    width: 260px;
+    width: 340px;
     padding: 3px;
     margin-left: auto;
     margin-right: auto;
     line-height: 1;
     background: rgba(255,255,255,0.2);
+}
+
+#photos_button{
+    font-size: 20px;
+    padding: .4em .8em;
+    border: black solid 4px;
+    border-radius: 1px;
+}
+#photos_button:hover {
+    padding: 15px;
+    font-size: 23px;
+    transition:all linear 0.15s;
 }
 
 .paragraphs{
@@ -60,7 +72,7 @@ span{
     text-align: left;
 }
 
-img{
+.main_image{
     display: block;
     width: 100%;
     max-width: 1300px;
@@ -68,7 +80,19 @@ img{
     margin-left: auto;
     margin-right: auto;
 }
-img.resize{
+.main_image.resize{
+    height: auto;
+}
+
+.photos{
+    display: block;
+    max-width: 78%;
+    max-height: 546px;
+    min-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.photos.resize{
     height: auto;
 }
 
@@ -93,6 +117,11 @@ img.resize{
 	background-color: #95A5A6;
     z-index: 999;
 }
+
+.white_space{
+    height: 200px;
+}
+
 
 a:link {
     color: black;

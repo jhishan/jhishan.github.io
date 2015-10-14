@@ -1,3 +1,4 @@
+
 $(document).ready(function() {
     function isScrolledIntoView(elem) {
         var docViewTop = $(window).scrollTop();
@@ -7,10 +8,23 @@ $(document).ready(function() {
         var elemHeight = $(elem).height();
         return ((elemTop-docViewTop) < (elemHeight/1.8));
     }
+	url = "https://api.syncano.io/v1/instances/jhishan/webhooks/p/1dd3dc13a3bdd9ec600d3347bcf6b2d62718abcb/photo_stream/"
 
-	var myImages = document.getElementsByClassName('main_image');
+	white_space="<div class=\"white_space\"></div>"
+
+	$.get(url, function(data){
+		var data = JSON.parse(data.result.stdout);
+		for (i = 0; i < data.length; i++) {
+			image_element = "<img class=\"photos\"src=" + data[i].photo_url+" alt=" +data[i].photo_alt +"></img>"
+			$( "body" ).append( image_element );
+			$( "body" ).append( white_space );
+		}
+		$( "#loadingText" ).text("enjoy, below are my favorite photos that I took this week");
+	});
+
+
+	var myImages = document.getElementsByClassName('photos');
 	var title = $('.pageTitle');
-	var mainWidth = $('#page-content-wrapper').width();
 
 	$(window).scroll(function(){
 		for (var i = 0; i<myImages.length; i++){
@@ -22,4 +36,7 @@ $(document).ready(function() {
 			title.html('Jhishan');
 		};
 	});
+
+
+
 });

@@ -19,7 +19,7 @@ $(document).ready(function() {
 			$( "body" ).append( image_element );
 			$( "body" ).append( white_space );
 		}
-		$( "#loadingText" ).text("enjoy, below are my favorite photos that I took this week");
+		$( "#loadingText" ).text("enjoy, below are the favorite photos that I took this week");
 	});
 
 

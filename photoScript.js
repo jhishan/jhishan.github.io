@@ -10,14 +10,14 @@ $(document).ready(function() {
     }
 	url = "https://api.syncano.io/v1/instances/jhishan/webhooks/p/1dd3dc13a3bdd9ec600d3347bcf6b2d62718abcb/photo_stream/"
 
-	white_space="<div class=\"white_space\"></div>"
+	whiteSpace="<div class=\"whiteSpace\"></div>"
 
 	$.get(url, function(data){
 		var data = JSON.parse(data.result.stdout);
 		for (i = 0; i < data.length; i++) {
 			image_element = "<img class=\"photos\"src=" + data[i].photo_url+" alt=" +data[i].photo_alt +"></img>"
 			$( "body" ).append( image_element );
-			$( "body" ).append( white_space );
+			$( "body" ).append( whiteSpace );
 		}
 		$( "#loadingText" ).text("enjoy, below are the favorite photos that I took this week");
 	});

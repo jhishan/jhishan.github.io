@@ -40,7 +40,6 @@ $(document).ready(function() {
 			title.html('Jhishan');
 		};
 		if($(window).scrollTop() + $(window).height() > $(document).height()-30) {
-			$(window).unbind('scroll');
 			
 			if(nextUrl != null){
 	       		$.ajax({

@@ -52,7 +52,9 @@
     background-color: #95A5A6;
     z-index: 999;
 }
-
+.whiteSpace{
+    height: 200px;
+}
 .paragraphs{
     letter-spacing: .01rem;
     line-height: 1.6;
@@ -80,22 +82,34 @@
     height: auto;
 }
 
-a.kickerLinks:link {
-    color: black;
-    text-decoration: none;
+.kickerLinks{
+    list-style-type: none;
+    display: inline;
 }
 
-a.kickerLinks:visited {
-    color: black;
-}
-
-a.kickerLinks:hover {
+li.kickerLinks:hover {
     color: #2980b9;
     font-size: 18px;
     transition:all linear 0.15s;
 }
+
+.active{
+    border-bottom: solid;
+}
 .tabContent{
     width: 100%;
+}
+
+.photos{
+    display: block;
+    max-width: 85%;
+    max-height: 650px;
+    min-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.photos.resize{
+    height: auto;
 }
 
 #readMore{
@@ -122,5 +136,5 @@ a.kickerLinks:hover {
     border-radius: 3px;
     margin-left: auto;  
     margin-right: auto;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 }

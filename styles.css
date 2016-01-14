@@ -1,66 +1,56 @@
-html,body{
-    width: 100%;
-    margin: 0px;
-    padding: 0px;
-}
+
 
 #header{
     overflow: auto;
-    height: 400px;;
+    height: 200px;
     width: 100%;
-    background: url(img/header.JPG) center center;
-    background-size: cover;
+    background: white center center;
+    
 }
 
-#pageTitle{
-	color: white;
-	position: fixed;
-	top: 0;
-	right: 0;
-	text-align: right;
-	font-size: 18px;
-	font-family: sans-serif;
-	font-weight: lighter;
-	letter-spacing: 1px;
-	padding-top: 4px;
-	padding-bottom: 2px;
-	padding-left: 10px;
-	padding-right: 10px;
-	background-color: #95A5A6;
-  z-index: 999;
-}
-
-#kicker{
+#name{
     text-align: center;
     font-family: Open Sans;
-    font-weight: 700;
-    text-transform: uppercase;
-    width: 260px;
-    padding: 3px;
-    margin-left: auto;
-    margin-right: auto;
-    line-height: 1;
-    background: rgba(255,255,255,0.2);
-}
-
-h1{
-    text-align: center;
-    font-family: Open Sans;
-    font-size: 50px;
+    font-size: 55px;
     font-weight: 700;
     color: black;
     text-transform: uppercase;
     letter-spacing: 0.05em;
-    margin-bottom: 10px;
-    padding-top: 120px;
+    padding-top: 40px;
 }
 
-span{
-    display: inline-block;
-    padding: .2em .4em;
-    border: black solid 8px;
-    border-radius: 1px;
-    background: rgba(255,255,255,0.3);
+#kicker{
+    font-family: Open Sans;
+    font-weight: 700;
+    text-transform: uppercase;
+    width: 1px;
+    margin: auto;
+    overflow: visible;
+    line-height: 1;
+}
+
+#kickerInner{
+    margin-top: 18px;
+    width:280px;
+    margin-left: -130px;
+}
+
+#pageTitle{
+    color: white;
+    position: fixed;
+    top: 0;
+    right: 0;
+    text-align: right;
+    font-size: 18px;
+    font-family: sans-serif;
+    font-weight: lighter;
+    letter-spacing: 1px;
+    padding-top: 4px;
+    padding-bottom: 2px;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: #95A5A6;
+    z-index: 999;
 }
 
 .paragraphs{
@@ -82,7 +72,7 @@ span{
     display: block;
     width: 100%;
     max-width: 1300px;
-	  max-height: 800px;
+	max-height: 800px;
     margin-left: auto;
     margin-right: auto;
 }
@@ -90,17 +80,47 @@ span{
     height: auto;
 }
 
-a:link {
+a.kickerLinks:link {
     color: black;
     text-decoration: none;
 }
 
-a:visited {
+a.kickerLinks:visited {
     color: black;
 }
 
-a:hover {
+a.kickerLinks:hover {
     color: #2980b9;
     font-size: 18px;
     transition:all linear 0.15s;
+}
+.tabContent{
+    width: 100%;
+}
+
+#readMore{
+    display: inline-block;
+    text-decoration: underline;
+}
+
+
+#aboutText{
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: Open Sans;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 29px;
+}
+
+#me{
+    display: block;
+    width: 25%;
+    min-width: 200px;
+    max-width: 270px;
+    border-radius: 3px;
+    margin-left: auto;  
+    margin-right: auto;
+    margin-bottom: 20px;
 }

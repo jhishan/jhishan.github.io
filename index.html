@@ -10,7 +10,9 @@
 		<meta name="viewport" content="width=device-width"/>
 
 		<link rel="icon" type="image/png" href="images/logo.png"/><!--need to actually put images -->
+	   	<link rel="stylesheet" href="bootstrap.min.css"/>
 	   	<link rel="stylesheet" href="styles.css"/>
+
 		<link href='http://fonts.googleapis.com/css?family=Open+Sans:700,400' rel='stylesheet' type='text/css'>
 		<script src="jquery-1.11.1.min.js"></script>
 		<script src="script.js"></script>
@@ -19,14 +21,33 @@
 	<body>
 
 		<div id="header">
-			<h1> <span>Jhishan</span></h1>
-			<div id="kicker"><a target="_blank" href="https://twitter.com/jhishan">Twitter</a> // <a target="_blank" href="https://github.com/jhishan">Github</a> // <a target="_blank" href="https://medium.com/@jhishan">Medium</a></div>
+			<div id="name">Jhishan</div>
+			<div id="kicker">
+				<div id="kickerInner">
+					<a class="kickerLinks" target="_blank" href="">About</a> // <a target="_blank" class="kickerLinks" href="">Portfolio</a> // <a target="_blank" class="kickerLinks" href="">Photos</a>
+				</div>
+			</div>
 		</div>
 		<div id="pageTitle">Jhishan</div>
-		<a class="dropdownLinks"> About </a>
-		<a class="dropdownLinks"> My Work </a>
-		<a class="dropdownLinks"> Photos </a>
+
+		<div class="tabContent" id="about">
+			<img id="me" alt="Jhishan" src="img/me.jpg"></img>
+
+			<p id="aboutText">Jhishan is an aspiring programmer currently studying undergraduate computer science at NYU. In addition to programming he loves photography and dables with film making. He grew up in Queens, NY. <a href="#" class="readMore">Read More</a>
+
+			</p>
+
+		</div>
+
 <!--
+		<div class="container">
+			<div class="row">
+				<a class="dropdownLinks col-md-4"> About 		<img class="bigPhoto" alt="bike" src="img/bike.jpg"></img></a>
+			
+				<a class="dropdownLinks col-md-4"> My Work </a>
+				<a class="dropdownLinks col-md-4"> Photos </a>
+			</div>
+		</div>
 		<p class="paragraphs">
 			I <b>bike</b>
 		</p>

@@ -52,8 +52,8 @@ $(document).ready(function() {
 
 		for (i = 0; i < data.length-1; i++) {
 			image_element = "<img class=\"photos\"src=" + data[i].photo_url+" alt=\"" +data[i].photo_alt +"\"></img>"
-			$( "#photos" ).append( image_element );
-			$( "#photos" ).append( whiteSpace );
+			$( "#images" ).append( image_element );
+			$( "#images" ).append( whiteSpace );
 		}
 		nextUrl = data[10];
 
@@ -83,9 +83,11 @@ $(document).ready(function() {
 			if($(window).scrollTop() + $(window).height() > $(document).height()-30) {
 				if(nextUrl != null){
 					$(window).unbind("scroll");
-					loading_more = "<p class=\"loadingText\"> loading more ... </p>"
-					$( "body" ).append(loading_more);
-
+					//loading_more = "<p class=\"loadingText\"> loading more ... </p>"
+					//$( "body" ).append(loading_more);
+					// ONLY DO THIS IF IM ON THAT TAB, RIGHT NOW IT DOES IT ALL THE TIME THIS IS VERY BAD!!!!!!!!!!
+					//!!!!!
+					// ^ LOOOOOOOOK AT THIS! MAKE SURE YOU FIX THIS
 		       		$.ajax({
 		            type:"get",
 		            headers: {"X-API-KEY": "83351a56a36a81c69862c8af458d77210cc821f9", "X-USER-KEY":"8069b8ea797806f8904664af41e0e2a4340121c6"},
@@ -94,15 +96,15 @@ $(document).ready(function() {
 		            success: function(msg) {
 						for (i = 0; i < msg.objects.length; i++) {
 							image_element = "<img alt=\""+ msg.objects[i].alt+"\" class=\"photos\" src=" + msg.objects[i].photo.value+"></img>";
-							$( "#photos" ).append( image_element );
-							$( "#photos" ).append( whiteSpace );
+							$( "#images" ).append( image_element );
+							$( "#images" ).append( whiteSpace );
 						}
 						if(msg.next != null){
 							nextUrl = "https://api.syncano.io" + msg.next;
 						} else{
 							nextUrl =  null;
 						}
-						$( ".loadingText" ).remove();
+						//$( ".loadingText" ).remove();
 						$(window).scroll(scrollFunction);
 
 
@@ -110,9 +112,39 @@ $(document).ready(function() {
 		    		});
 
 	    		}
-	   		}	        
+	   		}
 
 	    };
 	    $(window).scroll(scrollFunction);
 	});
+	var width = $(window).width();
+	if(width < 500){
+		$(".verticleBar").css("height", "300px");
+		$(".rightContainer").css("height", "300px");
+		$(".leftContainer").css("height", "300px");
+
+		$(".timeLinePics").css("margin-top", "60px");
+		$(".timeLineText").css("margin-top", "15px");
+
+	}
+	$( window ).resize(function() {
+		width = $(window).width();
+		if(width < 500){
+			$(".verticleBar").css("height", "300px");
+			$(".rightContainer").css("height", "300px");
+			$(".leftContainer").css("height", "300px");
+
+			$(".timeLinePics").css("margin-top", "60px");
+			$(".timeLineText").css("margin-top", "15px");
+
+		} else{
+			$(".verticleBar").css("height", "500px");
+			$(".rightContainer").css("height", "500px");
+			$(".leftContainer").css("height", "500px");
+
+			$(".timeLinePics").css("margin-top", "120px");
+			$(".timeLineText").css("margin-top", "150px");
+		}
+	});
+
 });

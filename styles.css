@@ -1,11 +1,13 @@
-
+body{
+    margin: 0 !important;
+}
 
 #header{
     overflow: auto;
     height: 200px;
     width: 100%;
     background: white center center;
-    
+
 }
 
 #name{
@@ -31,8 +33,8 @@
 
 #kickerInner{
     margin-top: 18px;
-    width:280px;
-    margin-left: -130px;
+    width:260px;
+    margin-left: -125px;
 }
 
 #pageTitle{
@@ -54,6 +56,9 @@
 }
 .whiteSpace{
     height: 200px;
+}
+.whiteSpaceSmall{
+    height: 100px;
 }
 .paragraphs{
     letter-spacing: .01rem;
@@ -104,7 +109,7 @@ li.kickerLinks:hover {
     display: block;
     max-width: 85%;
     max-height: 650px;
-    min-width: 400px;
+    min-width: 320px;
     margin-left: auto;
     margin-right: auto;
 }
@@ -112,10 +117,6 @@ li.kickerLinks:hover {
     height: auto;
 }
 
-#readMore{
-    display: inline-block;
-    text-decoration: underline;
-}
 
 
 #aboutText{
@@ -132,9 +133,97 @@ li.kickerLinks:hover {
     display: block;
     width: 25%;
     min-width: 200px;
-    max-width: 270px;
+    max-width: 300px;
     border-radius: 3px;
-    margin-left: auto;  
+    margin-left: auto;
     margin-right: auto;
+    margin-bottom: 30px;
+}
+
+.timeBox{
+    width: 100%;
+}
+
+.verticleBar{
+    background: black;
+    height: 500px;
+    width: 3px;
+    margin-left: 49%;
+    position: absolute;
+}
+
+.yearText{
+    font-family: Open Sans;
+    font-weight: 700;
+    font-size: 18px;
+    text-align: center;
+    margin: 10px;
+}
+
+.timeLinePics{
+    width: 100%;
+    max-width: 280px;
+    margin-top: 120px;
+    border-radius: 12px;
+    float: right;
+    display: inline;
+
+}
+.leftContainer{
+    height: 500px;
+    width: 48%;
+    display: inline-block;
+    float: left;
+}
+
+.rightContainer{
+    height: 500px;
+    width: 48%;
+    display: inline-block;
+    float: right;
+}
+
+.timeLineText{
+    font-family: Open Sans;
+    margin-top: 150px;
+    padding: 20px;
+}
+.blocker{
+    clear: both;
+}
+
+.portfolioImage{
+    width: 46%;
+    float: left;
+    margin: 2%;
+}
+
+.portfolioText{
+    float: left;
+    width: 46%;
+    margin: 2%;
+    font-family: Open Sans;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 29px;
+}
+
+.centerWrapper{
+    width: 100%;
+}
+.workLogo{
+    width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    margin-top: 40px;
+    margin-bottom: 30px;
+}
+
+#instapaperLogo{
+    font-weight: 700;
+    font-size: 62px;
+    text-align: center;
+    margin-top: 30px;
     margin-bottom: 30px;
 }

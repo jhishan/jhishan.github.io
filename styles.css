@@ -183,6 +183,8 @@ li.kickerLinks:hover {
     float: right;
 }
 
+
+
 .timeLineText{
     font-family: Open Sans;
     margin-top: 150px;
@@ -206,6 +208,11 @@ li.kickerLinks:hover {
     font-size: 16px;
     font-weight: 400;
     line-height: 29px;
+}
+
+.timeLineYear{
+    font-family: Open Sans;
+    font-weight: 700px;
 }
 
 .centerWrapper{

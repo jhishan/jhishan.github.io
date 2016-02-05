@@ -9,20 +9,11 @@ $(document).ready(function() {
     }
 
 	var profilePicture = $('.profilePicture');
-	var myImages = document.getElementsByClassName('img');
-	var title = $('.pageTitle');
+	var myImages = document.getElementsByClassName('bannerItem');
+	var title = $('#pageTitle');
 	var mainWidth = $('#page-content-wrapper').width();
 
-	$(window).scroll(function(){
-		for (var i = 0; i<myImages.length; i++){
-			if(isScrolledIntoView(myImages[i])){
-				title.html(myImages[i].getAttribute('alt'));
-			}
-		};
-		if ($(window).scrollTop()<40){
-			title.html('Jhishan');
-		};
-	});
+
 
 	$('.kickerLinks').on('click', function(e){
     	var currentAttrValue = jQuery(this).attr('data-tab');
@@ -30,10 +21,8 @@ $(document).ready(function() {
        	for (var i = 0; i < myTabs.length; i++){
        		if(myTabs[i].id == currentAttrValue){
        			$(myTabs[i]).css("display", "block");
-       			console.log("true");
        		} else{
        			$(myTabs[i]).css("display", "none");
-       			console.log("false");
        		}
        	}
 
@@ -51,7 +40,7 @@ $(document).ready(function() {
 		var data = JSON.parse(data.result.stdout);
 
 		for (i = 0; i < data.length-1; i++) {
-			image_element = "<img class=\"photos\"src=" + data[i].photo_url+" alt=\"" +data[i].photo_alt +"\"></img>"
+			image_element = "<img class=\"photos bannerItem\"src=" + data[i].photo_url+" alt=\"" +data[i].photo_alt +"\"></img>"
 			$( "#images" ).append( image_element );
 			$( "#images" ).append( whiteSpace );
 		}
@@ -65,9 +54,9 @@ $(document).ready(function() {
 	});
 
 
-	var myImages = document.getElementsByClassName('photos');
-	var title = $('.pageTitle');
-
+	var myImages = document.getElementsByClassName('bannerItem');
+	var title = $('#pageTitle');
+    console.log(myImages);
 	$(function(){
 	    var scrollFunction = function(){
 
@@ -81,61 +70,80 @@ $(document).ready(function() {
 			};
 
 			if($(window).scrollTop() + $(window).height() > $(document).height()-30) {
-				if(nextUrl != null){
-					$(window).unbind("scroll");
-					//loading_more = "<p class=\"loadingText\"> loading more ... </p>"
-					//$( "body" ).append(loading_more);
-					// ONLY DO THIS IF IM ON THAT TAB, RIGHT NOW IT DOES IT ALL THE TIME THIS IS VERY BAD!!!!!!!!!!
-					//!!!!!
-					// ^ LOOOOOOOOK AT THIS! MAKE SURE YOU FIX THIS
-		       		$.ajax({
-		            type:"get",
-		            headers: {"X-API-KEY": "83351a56a36a81c69862c8af458d77210cc821f9", "X-USER-KEY":"8069b8ea797806f8904664af41e0e2a4340121c6"},
-		            url: nextUrl,
-		            processData: false,
-		            success: function(msg) {
-						for (i = 0; i < msg.objects.length; i++) {
-							image_element = "<img alt=\""+ msg.objects[i].alt+"\" class=\"photos\" src=" + msg.objects[i].photo.value+"></img>";
-							$( "#images" ).append( image_element );
-							$( "#images" ).append( whiteSpace );
-						}
-						if(msg.next != null){
-							nextUrl = "https://api.syncano.io" + msg.next;
-						} else{
-							nextUrl =  null;
-						}
-						//$( ".loadingText" ).remove();
-						$(window).scroll(scrollFunction);
+                var myTabs = document.getElementsByClassName('tabContent');
+                var onImages = false;
+                for (var i = 0; i < myTabs.length; i++){
+                    if(myTabs[i].id == "images"){
+                        onImages = true;
+                    }
+                }
+                if(onImages){
+    				if(nextUrl != null){
+    					$(window).unbind("scroll");
+    					loading_more = "<p class=\"loadingText\"> loading more ... </p>"
+    					$( "#images" ).append(loading_more);
+
+    		       		$.ajax({
+    		            type:"get",
+    		            headers: {"X-API-KEY": "83351a56a36a81c69862c8af458d77210cc821f9", "X-USER-KEY":"8069b8ea797806f8904664af41e0e2a4340121c6"},
+    		            url: nextUrl,
+    		            processData: false,
+    		            success: function(msg) {
+    						for (i = 0; i < msg.objects.length; i++) {
+    							image_element = "<img alt=\""+ msg.objects[i].alt+"\" class=\"photos bannerItem\" src=" + msg.objects[i].photo.value+"></img>";
+    							$( "#images" ).append( image_element );
+    							$( "#images" ).append( whiteSpace );
+    						}
+    						if(msg.next != null){
+    							nextUrl = "https://api.syncano.io" + msg.next;
+    						} else{
+    							nextUrl =  null;
+    						}
+    						$( ".loadingText" ).remove();
+    						$(window).scroll(scrollFunction);
 
 
-		            }
-		    		});
-
-	    		}
+    		            }
+    		    		});
+    	    		}
+                }
 	   		}
 
 	    };
 	    $(window).scroll(scrollFunction);
 	});
 	var width = $(window).width();
+    if(width <= 900){
+        $(".portfolioImage").css("width", "96%");
+        $(".portfolioText").css("width", "96%");
+    }
 	if(width < 500){
-		$(".verticleBar").css("height", "300px");
-		$(".rightContainer").css("height", "300px");
-		$(".leftContainer").css("height", "300px");
+		$(".verticleBar").css("height", "330px");
+		$(".rightContainer").css("height", "330px");
+		$(".leftContainer").css("height", "330px");
 
 		$(".timeLinePics").css("margin-top", "60px");
 		$(".timeLineText").css("margin-top", "15px");
+        $(".timeLineText").css("font-size", "12px");
 
 	}
 	$( window ).resize(function() {
 		width = $(window).width();
+        if(width <= 900){
+            $(".portfolioImage").css("width", "96%");
+            $(".portfolioText").css("width", "96%");
+        } else{
+            $(".portfolioImage").css("width", "46%");
+            $(".portfolioText").css("width", "46%");
+        }
 		if(width < 500){
-			$(".verticleBar").css("height", "300px");
-			$(".rightContainer").css("height", "300px");
-			$(".leftContainer").css("height", "300px");
+			$(".verticleBar").css("height", "330px");
+			$(".rightContainer").css("height", "330px");
+			$(".leftContainer").css("height", "330px");
 
 			$(".timeLinePics").css("margin-top", "60px");
 			$(".timeLineText").css("margin-top", "15px");
+            $(".timeLineText").css("font-size", "12px");
 
 		} else{
 			$(".verticleBar").css("height", "500px");
@@ -144,7 +152,9 @@ $(document).ready(function() {
 
 			$(".timeLinePics").css("margin-top", "120px");
 			$(".timeLineText").css("margin-top", "150px");
-		}
+            $(".timeLineText").css("font-size", "16px");
+
+        }
 	});
 
 });

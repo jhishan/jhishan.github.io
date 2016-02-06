@@ -54,7 +54,6 @@ $(document).ready(function() {
 
 	var myImages = document.getElementsByClassName('bannerItem');
 	var title = $('#pageTitle');
-    console.log(myImages);
 	$(function(){
 	    var scrollFunction = function(){
 

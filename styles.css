@@ -247,3 +247,10 @@ li.kickerLinks:hover {
     margin-top: 30px;
     margin-bottom: 30px;
 }
+#liveLight {
+  animation: blinker 2s linear infinite;
+}
+
+@keyframes blinker {
+  50% { opacity: 0.0; }
+}

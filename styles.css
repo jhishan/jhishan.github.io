@@ -117,7 +117,6 @@ li.kickerLinks:hover {
     width: 100%;
 }
 
-
 .photos{
     display: block;
     max-width: 85%;
@@ -129,8 +128,6 @@ li.kickerLinks:hover {
 .photos.resize{
     height: auto;
 }
-
-
 
 #aboutText{
     width: 80%;
@@ -253,4 +250,18 @@ li.kickerLinks:hover {
 
 @keyframes blinker {
   50% { opacity: 0.0; }
+}
+
+.centerHolder{
+    text-align: center;
+    margin-bottom: 75px;
+    margin-top: 20px;
+}
+
+.iconLinks{
+    transition: all .2s ease-in-out;
+}
+
+.iconLinks:hover{
+    transform: scale(1.2);
 }

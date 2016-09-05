@@ -3,6 +3,5 @@ personal website
 
 vanilla css
 
-js with a little jquery
+js with a little jquery for easier ajax
 
-a note: JS was hacked together very quickly, but I have recently learned how to write better javascript, so it will be much cleaner very soon. I also plan to organize the css better.

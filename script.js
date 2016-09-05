@@ -1,35 +1,13 @@
-$(document).ready(function() {
-    function isScrolledIntoView(elem) {
-        var docViewTop = $(window).scrollTop();
-        var docViewBottom = docViewTop + $(window).height();
-        var elemTop = $(elem).position().top;
-        var elemBottom = elemTop + $(elem).height();
-        var elemHeight = $(elem).height();
-        return ((elemTop-docViewTop) < (elemHeight/1.8));
-    }
+function isScrolledIntoView(elem) {
+    var docViewTop = $(window).scrollTop();
+    var docViewBottom = docViewTop + $(window).height();
+    var elemTop = $(elem).position().top;
+    var elemBottom = elemTop + $(elem).height();
+    var elemHeight = $(elem).height();
+    return ((elemTop-docViewTop) < (elemHeight/1.8));
+}
 
-	var profilePicture = $('.profilePicture');
-	var myImages = document.getElementsByClassName('bannerItem');
-	var title = $('#pageTitle');
-	var mainWidth = $('#page-content-wrapper').width();
-
-	$('.kickerLinks').on('click', function(e){
-    	var currentAttrValue = jQuery(this).attr('data-tab');
-       	var myTabs = document.getElementsByClassName('tabContent');
-       	for (var i = 0; i < myTabs.length; i++){
-       		if(myTabs[i].id == currentAttrValue){
-       			$(myTabs[i]).css("display", "block");
-       		} else{
-       			$(myTabs[i]).css("display", "none");
-       		}
-       	}
-
-        $(this).addClass('active').siblings().removeClass('active');
-
-        e.preventDefault();
-    });
-
-
+var imagesTabWithAjax = function(){
 	url = "https://api.syncano.io/v1/instances/jhishan/webhooks/p/5b76a6113b3e9bd1e2a18799d91833c42efcd5e8/ajax_photos/?page_size=10";
 	whiteSpace="<div class=\"whiteSpace\"></div>";
 	nextUrl = "";
@@ -51,12 +29,10 @@ $(document).ready(function() {
 
 	});
 
-
 	var myImages = document.getElementsByClassName('bannerItem');
 	var title = $('#pageTitle');
 	$(function(){
 	    var scrollFunction = function(){
-
 			for (var i = 0; i<myImages.length; i++){
 				if(isScrolledIntoView(myImages[i])){
 					title.html(myImages[i].getAttribute('alt'));
@@ -109,6 +85,26 @@ $(document).ready(function() {
 	    };
 	    $(window).scroll(scrollFunction);
 	});
+
+};
+
+var changeTab = function(){
+	$('.kickerLinks').on('click', function(e){
+    	var currentAttrValue = jQuery(this).attr('data-tab');
+       	var myTabs = document.getElementsByClassName('tabContent');
+       	for (var i = 0; i < myTabs.length; i++){
+       		if(myTabs[i].id == currentAttrValue){
+       			$(myTabs[i]).css("display", "block");
+       		} else{
+       			$(myTabs[i]).css("display", "none");
+       		}
+       	}
+        $(this).addClass('active').siblings().removeClass('active');
+        e.preventDefault();
+    });
+};
+
+var jankyResponsiveWebDesign = function(){
 	var width = $(window).width();
     if(width <= 900){
         $(".portfolioImage").css("width", "96%");
@@ -124,7 +120,7 @@ $(document).ready(function() {
         $(".timeLineText").css("font-size", "12px");
 
 	}
-	$( window ).resize(function() {
+	$(window).resize(function() {
 		width = $(window).width();
         if(width <= 900){
             $(".portfolioImage").css("width", "96%");
@@ -150,8 +146,13 @@ $(document).ready(function() {
 			$(".timeLinePics").css("margin-top", "120px");
 			$(".timeLineText").css("margin-top", "150px");
             $(".timeLineText").css("font-size", "16px");
-
         }
 	});
+};
 
+
+$(document).ready(function() {
+    imagesTabWithAjax();
+    changeTab();
+    jankyResponsiveWebDesign();
 });

@@ -1,267 +1,62 @@
-body{
-    margin: 0 !important;
-}
-
-#header{
-    overflow: auto;
-    height: 200px;
-    width: 100%;
-    background: white center center;
-
-}
-
-#name{
+#bigBox{
+    margin-left: auto;
+    margin-right: auto;
+    width: 1065px;
     text-align: center;
+    position: relative;
+    top: 50px;
+}
+.square{
+    width: 110px;
+    height: 110px;
+    background-color: white;
+    display: inline-block;
+    border-width: 4px;
+    border-color: white;
+    border-style: solid;
+    border-radius: 1px;
+    position: relative;
+    transition:all linear 0.7s;
+}
+
+.letterSquare{
+    opacity: .9;
+}
+.letter{
     font-family: Open Sans;
-    font-size: 55px;
-    font-weight: 700;
     color: black;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    padding-top: 40px;
+    font-size: 60px;
+    font-weight: bold;
+    position: absolute;
+    left: 25px;
+    top: -53px;
 }
 
-#kicker{
-    font-family: Open Sans;
-    font-weight: 700;
-    text-transform: uppercase;
-    width: 1px;
-    margin: auto;
-    overflow: visible;
-    line-height: 1;
+.borderHover{
+    border-color: white;
 }
 
-#kickerInner{
-    margin-top: 18px;
-    width:260px;
-    margin-left: -125px;
+.borderHover:hover{
+    border-width: 5px;
+    border-color: red;
+
 }
 
-#pageTitle{
-    color: white;
-    position: fixed;
-    top: 0;
-    right: 0;
-    text-align: right;
-    font-size: 18px;
-    font-family: sans-serif;
-    font-weight: lighter;
-    letter-spacing: 1px;
-    padding-top: 4px;
-    padding-bottom: 2px;
-    padding-left: 10px;
-    padding-right: 10px;
-    background-color: #95A5A6;
-    z-index: 999;
-}
-.whiteSpace{
-    height: 200px;
-}
-.whiteSpaceSmall{
+.emptySpace{
     height: 100px;
 }
-.paragraphs{
-    letter-spacing: .01rem;
-    line-height: 1.6;
-    font-family: Open Sans;
-    margin-top: 150px;
-    margin-bottom: 150px;
-    max-width:70%;
+
+.textBoxHolder{
+    width: 400px;
+    height: 400px;
     margin-left: auto;
     margin-right: auto;
-    text-align: center;
+    padding: 30px;
+    margin-top: 50px;
+    /*box-shadow: -40px -40px 0px rgba(44, 79, 100, 0.4);*/
+    border-width: 40px;
+    border-style: solid;
 }
-
-.loadingText{
-    letter-spacing: .01rem;
-    line-height: 1.6;
+.textBox{
     font-family: Open Sans;
-    margin-bottom: 180px;
-    max-width:70%;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
-}
-.long_p{
-    text-align: left;
-}
-
-.bigPhoto{
-    display: block;
-    width: 100%;
-    max-width: 1300px;
-    max-height: 800px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.bigPhoto.resize{
-    height: auto;
-}
-
-.kickerLinks{
-    list-style-type: none;
-    display: inline;
-}
-
-li.kickerLinks:hover {
-    color: #2980b9;
-    font-size: 18px;
-    transition:all linear 0.15s;
-}
-
-.active{
-    border-bottom: solid;
-}
-.tabContent{
-    width: 100%;
-}
-
-.photos{
-    display: block;
-    max-width: 85%;
-    max-height: 650px;
-    min-width: 320px;
-    margin-left: auto;
-    margin-right: auto;
-}
-.photos.resize{
-    height: auto;
-}
-
-#aboutText{
-    width: 80%;
-    margin-left: auto;
-    margin-right: auto;
-    font-family: Open Sans;
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 29px;
-}
-
-#me{
-    display: block;
-    width: 25%;
-    min-width: 200px;
-    max-width: 300px;
-    border-radius: 3px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 30px;
-}
-
-.timeBox{
-    width: 100%;
-}
-
-.verticleBar{
-    background: black;
-    height: 500px;
-    width: 3px;
-    margin-left: 49%;
-    position: absolute;
-}
-
-.yearText{
-    font-family: Open Sans;
-    font-weight: 700;
-    font-size: 18px;
-    text-align: center;
-    margin: 10px;
-}
-
-.timeLinePics{
-    width: 100%;
-    max-width: 280px;
-    margin-top: 120px;
-    border-radius: 12px;
-    float: right;
-    display: inline;
-
-}
-.leftContainer{
-    height: 500px;
-    width: 48%;
-    display: inline-block;
-    float: left;
-}
-
-.rightContainer{
-    height: 500px;
-    width: 48%;
-    display: inline-block;
-    float: right;
-}
-
-
-
-.timeLineText{
-    font-family: Open Sans;
-    margin-top: 150px;
-    padding: 20px;
-}
-.blocker{
-    clear: both;
-}
-
-.portfolioImage{
-    width: 46%;
-    float: left;
-    margin: 2%;
-}
-
-.portfolioText{
-    float: left;
-    width: 46%;
-    margin: 2%;
-    font-family: Open Sans;
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 29px;
-}
-
-.timeLineYear{
-    font-family: Open Sans;
-    font-weight: 700px;
-}
-
-.centerWrapper{
-    width: 100%;
-}
-.workLogo{
-    width: 300px;
-    margin-left: auto;
-    margin-right: auto;
-    display: block;
-    margin-top: 40px;
-    margin-bottom: 30px;
-}
-
-#instapaperLogo{
-    font-weight: 700;
-    font-size: 62px;
-    text-align: center;
-    margin-top: 30px;
-    margin-bottom: 30px;
-}
-#liveLight {
-  animation: blinker 2s linear infinite;
-}
-
-@keyframes blinker {
-  50% { opacity: 0.0; }
-}
-
-.centerHolder{
-    text-align: center;
-    margin-bottom: 75px;
-    margin-top: 20px;
-}
-
-.iconLinks{
-    transition: all .2s ease-in-out;
-}
-
-.iconLinks:hover{
-    transform: scale(1.2);
 }

@@ -1,3 +1,4 @@
+// Helper functions
 
 // knuth shuffle http://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array
 function shuffle(array) {
@@ -27,8 +28,15 @@ function getRandomColor() {
     }
     return color;
 }
+
+
+// Start box animation
 var bigBox = document.getElementById('bigBox');
 
+/*
+   Append all fo the boxes onto the page
+   Set up links for the three tabs
+*/
 var numberOfSquares = 45;
 for(var t = 0; t < numberOfSquares; t++){
     var box = document.createElement('div');
@@ -55,8 +63,11 @@ for(var t = 0; t < numberOfSquares; t++){
         bigBox.appendChild(box);
     }
 }
+
+// all of the sqaures on the screen, this is available now that we have appended all of them to the page
 var squares = document.getElementsByClassName("square");
 
+// icons for the 3 buttons 
 var addIcons = function(){
     squares[30].id = "aboutLink";
     squares[30].style.backgroundImage = "url('img/person.svg')";
@@ -76,6 +87,9 @@ var addIcons = function(){
     squares[32].style.backgroundColor = "#F01930";
 }
 
+/*
+    Currently not using touch up function, it needs work
+*/
 var touchUp = function(){
     var arrayIndexes = [];
     for(var i = 0; i < numberOfSquares; i++){
@@ -87,7 +101,6 @@ var touchUp = function(){
     var easeOrder = [0,1,2,3,4,5,6,7,8,17,26, 35,44,43,42,41,40,39,38,37,36,27,18,9,10,11,12,13,14,15,16,25,34,33,32,31,30,29,28,19,20,21,22,23,24];
     easeOrder = shuffle(easeOrder);
     rID3 = setInterval(function(){
-
         currentBox = squares[easeOrder[start]];
         currentBox.style.borderWidth = 0;
         if(currentBox.classList.contains('letterSquare') == false){
@@ -112,6 +125,10 @@ var touchUp = function(){
 
     },40);
 }
+
+/*
+    Animation beings below
+*/
 
 var loopsElapsed = 0;
 var addInterval = 25;
@@ -138,6 +155,17 @@ var wrapUp = function(){
 
     rID2 = setInterval(function(){
 
+        /*
+            TODO 
+            - Code block below is where I need to add 
+            this icons
+            - Make startBox Index jump by 5 after it hits 26,
+                - Then add the links
+
+            Note that the "letterSquare" class is what 
+            prevents its color from being changed in 
+            the following code block
+        */
         if(startBoxIndex < 26){
             var l = document.createElement('p');
             l.className = "letter";
@@ -151,75 +179,55 @@ var wrapUp = function(){
             letterIndex+=1;
         }
 
-        var randomOpacity = (Math.random() * (0.7 - 0.3)).toFixed(1);
+        var randomNum = Math.floor(Math.random() * 10) + 1  
+        if(randomNum <= 3){
+            randomOpacity = .5
+        } else if(randomNum <= 6){
+            randomOpacity = .4
+        } else{
+            randomOpacity =.3
+        }
+
+        console.log("Random Opacity is " + randomOpacity);
         currentBox = squares[arrayIndexes[start]];
         var currentBoxIndex = arrayIndexes[start];
-        if(randomOpacity != 0){
-            if(currentBox.classList.contains('letterSquare') == false && (arrayIndexes[start] < 19 || arrayIndexes[start] > 25)){
-                currentBox.style.opacity = randomOpacity;
-                if(currentBoxIndex == 30 || currentBoxIndex == 31 || currentBoxIndex == 32){
-                  if(currentBoxIndex == 30){
-                    //currentBox.style.backgroundImage = "url('img/person.svg')";
-                    currentBox.style.backgroundRepeat = "no-repeat";
-                    currentBox.style.backgroundSize = '70px';
-                    currentBox.style.backgroundPosition = "center";
-                    currentBox.style.backgroundColor = "#F01930";
-                  }
-                  if(currentBoxIndex == 31){
-                    //currentBox.style.backgroundImage = "url('img/experience.svg')";
-                    currentBox.style.backgroundRepeat = "no-repeat";
-                    currentBox.style.backgroundSize = '70px';
-                    currentBox.style.backgroundPosition = "center";
-                    currentBox.style.backgroundColor = "#F01930";
-                  }
-                  if(currentBoxIndex == 32){
-                    //currentBox.style.backgroundImage = "url('img/photo.svg')";
-                    currentBox.style.backgroundRepeat = "no-repeat";
-                    currentBox.style.backgroundSize = '70px';
-                    currentBox.style.backgroundPosition = "center";
-                    currentBox.style.backgroundColor = "#F01930";
-                  }
-                }else{
-                  currentBox.style.backgroundColor = getRandomColor();
-                }
-            }
-        }else{
-            if(currentBox.classList.contains('letterSquare') == false && (arrayIndexes[start] < 19 || arrayIndexes[start] > 25)){
-              if(currentBoxIndex == 30 || currentBoxIndex == 31 || currentBoxIndex == 32){
-                if(currentBoxIndex == 30){
-                  //currentBox.style.backgroundImage = "url('img/person.svg')";
-                  currentBox.style.backgroundRepeat = "no-repeat";
-                  currentBox.style.backgroundSize = '70px';
-                  currentBox.style.backgroundPosition = "center";
-                  currentBox.style.backgroundColor = "#F01930";
-                }
-                if(currentBoxIndex == 31){
-                  //currentBox.style.backgroundImage = "url('img/experience.svg')";
-                  currentBox.style.backgroundRepeat = "no-repeat";
-                  currentBox.style.backgroundSize = '70px';
-                  currentBox.style.backgroundPosition = "center";
-                  currentBox.style.backgroundColor = "#F01930";
-                }
-                if(currentBoxIndex == 32){
-                  //currentBox.style.backgroundImage = "url('img/photo.svg')";
-                  currentBox.style.backgroundRepeat = "no-repeat";
-                  currentBox.style.backgroundSize = '70px';
-                  currentBox.style.backgroundPosition = "center";
-                  currentBox.style.backgroundColor = "#F01930";
-                }
-              }else{
-                currentBox.style.backgroundColor = getRandomColor();
+        if(currentBox.classList.contains('letterSquare') == false && (arrayIndexes[start] < 19 || arrayIndexes[start] > 25)){
+            currentBox.style.opacity = randomOpacity;
+            if(currentBoxIndex == 30 || currentBoxIndex == 31 || currentBoxIndex == 32){
+              if(currentBoxIndex == 30){
+                //currentBox.style.backgroundImage = "url('img/person.svg')";
+                currentBox.style.backgroundRepeat = "no-repeat";
+                currentBox.style.backgroundSize = '70px';
+                currentBox.style.backgroundPosition = "center";
+                currentBox.style.backgroundColor = "#F01930";
               }
+              if(currentBoxIndex == 31){
+                //currentBox.style.backgroundImage = "url('img/experience.svg')";
+                currentBox.style.backgroundRepeat = "no-repeat";
+                currentBox.style.backgroundSize = '70px';
+                currentBox.style.backgroundPosition = "center";
+                currentBox.style.backgroundColor = "#F01930";
+              }
+              if(currentBoxIndex == 32){
+                //currentBox.style.backgroundImage = "url('img/photo.svg')";
+                currentBox.style.backgroundRepeat = "no-repeat";
+                currentBox.style.backgroundSize = '70px';
+                currentBox.style.backgroundPosition = "center";
+                currentBox.style.backgroundColor = "#F01930";
+              }
+            }else{
+              currentBox.style.backgroundColor = getRandomColor();
             }
         }
+       
 
         start += 1;
         loopsElapsed += 1;
         if(start >= squares.length){
-            touchUp();
+            //touchUp();
             clearInterval(rID2);
         }
 
-    }, 40);
+    }, 30);
 };
 wrapUp();

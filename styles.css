@@ -38,15 +38,6 @@
     transition: all linear .6s;
 }
 
-.borderHover{
-    border-color: white;
-}
-
-.borderHover:hover{
-    border-width: 5px;
-    border-color: red;
-}
-
 .emptySpace{
     height: 100px;
 }
@@ -64,4 +55,27 @@
 }
 .textBox{
     font-family: Open Sans;
+}
+
+#whiteSpace{
+    height: 120px;
+}
+
+.borderHover{
+}
+
+.selectedButton{
+    border-style: solid;
+    border-color: yellow;
+    border-width: 10px;
+    width: 90px;
+    height: 90px;
+}
+.button:hover{
+    border-width: 12px;
+    border-color: orange;
+}
+
+.displayNone{
+    display: none;
 }

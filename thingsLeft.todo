@@ -8,12 +8,16 @@
      ☐ Make sure site looks okay on ipad, iphone, android, safari, chrome and maybe, edge
 
   Tab system: 
-    ☐ Differentiate selected tab button @today
-      ☐ Add class name .selectedButton
-      ☐ Make sure its clear that there is a selected tab on page load
-      ☐ Make the tab switching functionality
+    ✔ Differentiate selected tab button @today @done (17-06-23 17:51)
+      ✔ Add class name .selectedButton @done (17-06-23 17:37)
+      ✔ Make sure its clear that there is a selected tab on page load @done (17-06-23 17:37)
+      ✔ Make the tab switching functionality @done (17-06-23 17:51)
 
   About Section:
     ☐ Bring in timeline from previous site
     ☐ Re-write description of myself
     ☐ Make sections for each part, start with red, go to blue, then to purple
+
+
+  Misc:
+    ☐ Touch up can be turned into a for loop, remove the interval stuff

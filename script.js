@@ -44,32 +44,58 @@ for (var t = 0; t < numberOfSquares; t++) {
     box.className = 'square';
     if (t == 30) {
         var newBox = document.createElement('a');
-        newBox.setAttribute("href", "./about.html");
-        newBox.appendChild(box)
-            //box.classList.add('borderHover');
+        newBox.appendChild(box);
+        box.setAttribute('data-name', 'about')
+        newBox.classList.add('button');
         bigBox.appendChild(newBox);
     } else if (t == 31) {
         var newBox = document.createElement('a');
-        newBox.setAttribute("href", "http://yahoo.com");
         newBox.appendChild(box)
-            //box.classList.add('borderHover');
+        box.setAttribute('data-name', 'work')
+        newBox.classList.add('button');
         bigBox.appendChild(newBox);
     } else if (t == 32) {
         var newBox = document.createElement('a');
-        newBox.setAttribute("href", "http://bing.com");
         newBox.appendChild(box)
-            //box.classList.add('borderHover');
+        box.setAttribute('data-name', 'photos')
+        newBox.classList.add('button');
         bigBox.appendChild(newBox);
     } else {
         bigBox.appendChild(box);
     }
 }
 
+var buttons = document.getElementsByClassName("button")
+var mainContentBoxes = document.getElementsByClassName("mainContentBoxes");
+for (var i = 0; i < buttons.length; i++) {
+    var button = buttons[i];
+    button.addEventListener('click', function(e) {
+        e.preventDefault();
+        console.log(this.firstChild.getAttribute('data-name'));
+
+        // remove highlight from selected item, add it to newly selected item
+        if (!this.firstChild.classList.contains("selectedButton")) {
+            for (var t = 0; t < buttons.length; t++) {
+                buttons[t].firstChild.classList.remove("selectedButton");
+                mainContentBoxes[t].classList.add("displayNone");
+            }
+            this.firstChild.classList.add("selectedButton");
+
+            // get new tab to display it
+            var name = this.firstChild.getAttribute('data-name');
+            var newTab = document.getElementById(name);
+            newTab.classList.remove("displayNone");
+        }
+
+    });
+}
+
 // all of the sqaures on the screen, this is available now that we have appended all of them to the page
 var squares = document.getElementsByClassName("square");
 
 /*
-    Currently not using touch up function, it needs work
+    Touch up function no longer needs to be run on interval
+    Make it a simple for loop
 */
 var touchUp = function() {
     var arrayIndexes = [];
@@ -83,8 +109,6 @@ var touchUp = function() {
     easeOrder = shuffle(easeOrder);
     rID3 = setInterval(function() {
         currentBox = squares[easeOrder[start]];
-        currentBox.style.borderWidth = 0;
-
         currentBox.style.transitionDuration = ".2s";
         start += 1;
         if (start == numberOfSquares) {
@@ -99,7 +123,7 @@ var touchUp = function() {
             clearInterval(rID3);
         }
 
-    }, 20);
+    }, 2);
 }
 
 /*
@@ -150,6 +174,7 @@ var wrapUp = function() {
                     squares[startBoxIndex].style.backgroundColor = "#F01930";
                     squares[startBoxIndex].style.opacity = .6;
                     squares[startBoxIndex].classList.add("buttonSquare");
+                    squares[startBoxIndex].classList.add("selectedButton");
                 } else if (startBoxIndex == 31) {
                     squares[startBoxIndex].style.backgroundImage = "url('img/experience.svg')";
                     squares[startBoxIndex].style.backgroundRepeat = "no-repeat";

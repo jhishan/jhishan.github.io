@@ -1,0 +1,21 @@
+ Personal Site:
+    Long term:
+       ☐ Build out tab system 
+       ☐ Build about section
+       ☐ Build work section
+       ☐ Build photo section
+       ☐ Build responsive view for animation
+       ☐ Make sure site looks okay on ipad, iphone, android, safari, chrome and maybe, edge
+
+Tab system: 
+  ☐ Differentiate selected tab button
+    ☐ Add class name .selectedButton
+    ☐ Make sure its clear that there is a selected tab on page load
+
+About Section:
+  ☐ Bring in timeline from previous site
+  ☐ Re-write description of myself
+  ☐ Make sections for each part, start with red, go to blue, then to purple
+  
+
+

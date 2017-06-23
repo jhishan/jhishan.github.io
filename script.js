@@ -67,26 +67,6 @@ for(var t = 0; t < numberOfSquares; t++){
 // all of the sqaures on the screen, this is available now that we have appended all of them to the page
 var squares = document.getElementsByClassName("square");
 
-// icons for the 3 buttons 
-var addIcons = function(){
-    squares[30].id = "aboutLink";
-    squares[30].style.backgroundImage = "url('img/person.svg')";
-    squares[30].style.backgroundRepeat = "no-repeat";
-    squares[30].style.backgroundSize = '70px';
-    squares[30].style.backgroundPosition = "center";
-    squares[30].style.backgroundColor = "#F01930";
-    squares[31].style.backgroundImage = "url('img/experience.svg')";
-    squares[31].style.backgroundRepeat = "no-repeat";
-    squares[31].style.backgroundSize = '70px';
-    squares[31].style.backgroundPosition = "center";
-    squares[31].style.backgroundColor = "#F01930";
-    squares[32].style.backgroundImage = "url('img/photo.svg')";
-    squares[32].style.backgroundRepeat = "no-repeat";
-    squares[32].style.backgroundSize = '70px';
-    squares[32].style.backgroundPosition = "center";
-    squares[32].style.backgroundColor = "#F01930";
-}
-
 /*
     Currently not using touch up function, it needs work
 */
@@ -103,9 +83,7 @@ var touchUp = function(){
     rID3 = setInterval(function(){
         currentBox = squares[easeOrder[start]];
         currentBox.style.borderWidth = 0;
-        if(currentBox.classList.contains('letterSquare') == false){
-            currentBox.style.opacity = .6;
-        }
+
         currentBox.style.transitionDuration = ".2s";
         start += 1;
         if(start == numberOfSquares){
@@ -117,13 +95,10 @@ var touchUp = function(){
             style = document.createElement('style');
             style.appendChild(document.createTextNode(css));
             document.getElementsByTagName('head')[0].appendChild(style);
-
-            addIcons();
-
             clearInterval(rID3);
         }
 
-    },40);
+    },20);
 }
 
 /*
@@ -219,7 +194,7 @@ var wrapUp = function(){
         start += 1;
         loopsElapsed += 1;
         if(start >= squares.length){
-            //touchUp();
+            touchUp();
             clearInterval(rID2);
         }
 
